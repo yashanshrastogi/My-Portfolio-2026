@@ -1,28 +1,24 @@
-import { motion } from 'framer-motion';
 import { Briefcase, Calendar, MapPin, ExternalLink } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
 import GlassCard from '../ui/GlassCard';
+import RevealOnScroll from '../ui/RevealOnScroll';
 import { experience } from '../../data/portfolioData';
-import { fadeIn } from '../../constants/variants';
 
 const Experience = () => {
   return (
-    <section id="experience" className="relative py-20 md:py-32 bg-dark/50">
+    <section className="relative py-24 md:py-32 bg-dark/50">
+      {/* Scroll anchor to offset floating navbar */}
+      <div id="experience" className="absolute -top-20" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle 
           title="Work Experience" 
-          subtitle="My professional journey and internships"
+          subtitle="Where I've shipped real code."
         />
 
         <div className="max-w-4xl mx-auto">
-          {experience.map((job, index) => (
-            <motion.div
-              key={job.id}
-              variants={fadeIn('up', 'spring', index * 0.1, 0.5)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-            >
+          {experience.map((job) => (
+            <RevealOnScroll key={job.id}>
               <GlassCard className="relative overflow-hidden mb-6">
                 <div className="flex flex-col md:flex-row gap-6 p-2">
                   {/* Icon */}
@@ -96,7 +92,7 @@ const Experience = () => {
                   </div>
                 </div>
               </GlassCard>
-            </motion.div>
+            </RevealOnScroll>
           ))}
         </div>
       </div>
@@ -105,3 +101,4 @@ const Experience = () => {
 };
 
 export default Experience;
+

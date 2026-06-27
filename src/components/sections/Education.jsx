@@ -2,16 +2,16 @@ import { motion } from 'framer-motion';
 import { GraduationCap, Calendar, MapPin } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
 import GlassCard from '../ui/GlassCard';
+import RevealOnScroll from '../ui/RevealOnScroll';
 import { education } from '../../data/portfolioData';
-import { fadeIn } from '../../constants/variants';
 
 const Education = () => {
   return (
-    <section id="education" className="relative py-20 md:py-32">
+    <section id="education" className="relative py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle 
           title="Education" 
-          subtitle="My academic journey and qualifications"
+          subtitle="AKTU, 2023–present. Building more outside class than in."
         />
 
         <div className="max-w-4xl mx-auto relative space-y-6">
@@ -24,14 +24,8 @@ const Education = () => {
             />
           </div>
 
-          {education.map((edu, index) => (
-            <motion.div
-              key={edu.id}
-              variants={fadeIn('up', 'spring', index * 0.1, 0.5)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-            >
+          {education.map((edu) => (
+            <RevealOnScroll key={edu.id}>
               <GlassCard className="relative group" hover={true}>
                 {/* Timeline indicator */}
                 <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2 
@@ -73,7 +67,7 @@ const Education = () => {
                   </div>
                 </div>
               </GlassCard>
-            </motion.div>
+            </RevealOnScroll>
           ))}
         </div>
       </div>

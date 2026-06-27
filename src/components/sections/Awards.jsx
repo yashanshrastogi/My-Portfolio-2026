@@ -1,9 +1,8 @@
-import { motion } from 'framer-motion';
 import { Trophy, Rocket, Award, ExternalLink, Cloud, Brain } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
 import GlassCard from '../ui/GlassCard';
+import RevealOnScroll from '../ui/RevealOnScroll';
 import { awards, certifications } from '../../data/portfolioData';
-import { fadeIn } from '../../constants/variants';
 
 const Awards = () => {
   const getIcon = (iconName) => {
@@ -23,11 +22,11 @@ const Awards = () => {
   };
 
   return (
-    <section id="awards" className="relative py-20 md:py-32 bg-dark/50">
+    <section id="awards" className="relative py-24 md:py-32 bg-dark/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle 
           title="Awards & Certifications" 
-          subtitle="Recognition for my achievements and continuous learning"
+          subtitle="Won a Google Cloud hackathon. Ranked Top 15/300 at Microsoft."
         />
 
         {/* Awards Section with Badge Images */}
@@ -38,26 +37,18 @@ const Awards = () => {
           </h3>
           
           <div className="grid md:grid-cols-2 gap-6">
-            {awards.map((award, index) => {
+            {awards.map((award) => {
               const Icon = getIcon(award.icon);
               return (
-                <motion.div
-                  key={award.id}
-                  variants={fadeIn('up', 'spring', index * 0.1, 0.5)}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true }}
-                >
+                <RevealOnScroll key={award.id}>
                   <GlassCard className="h-full" hover={true}>
                     <div className="flex flex-col sm:flex-row gap-6 p-2">
                       {/* Badge Image or Icon */}
                       <div className="flex-shrink-0">
                         {award.image ? (
-                          <motion.div 
+                          <div 
                             className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden 
                                       bg-white/5 border border-white/10 flex items-center justify-center shadow-inner"
-                            whileHover={{ scale: 1.05 }}
-                            transition={{ duration: 0.2 }}
                           >
                             <img 
                               src={award.image} 
@@ -65,7 +56,7 @@ const Awards = () => {
                               className="w-full h-full object-contain p-2"
                               loading="lazy"
                             />
-                          </motion.div>
+                          </div>
                         ) : (
                           <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${getColorClass(award.color)}
                                           flex items-center justify-center shadow-lg shadow-violet-500/20`}>
@@ -96,7 +87,7 @@ const Awards = () => {
                       </div>
                     </div>
                   </GlassCard>
-                </motion.div>
+                </RevealOnScroll>
               );
             })}
           </div>
@@ -110,23 +101,15 @@ const Awards = () => {
           </h3>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {certifications.map((cert, index) => (
-              <motion.div
-                key={cert.id}
-                variants={fadeIn('up', 'spring', index * 0.1, 0.5)}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-              >
+            {certifications.map((cert) => (
+              <RevealOnScroll key={cert.id}>
                 <GlassCard className="h-full" hover={true}>
                   <div className="p-2 flex flex-col h-full">
                     {/* Badge Image for IBM Cert */}
                     {cert.image && (
                       <div className="flex items-center gap-4 mb-6">
-                        <motion.div 
+                        <div 
                           className="w-16 h-16 rounded-xl overflow-hidden bg-white flex items-center justify-center shadow-[0_0_15px_rgba(139,92,246,0.3)] flex-shrink-0"
-                          whileHover={{ scale: 1.1, rotate: 5 }}
-                          transition={{ duration: 0.2 }}
                         >
                           <img 
                             src={cert.image} 
@@ -134,7 +117,7 @@ const Awards = () => {
                             className="w-[115%] h-[115%] max-w-none object-cover"
                             loading="lazy"
                           />
-                        </motion.div>
+                        </div>
                         <div className="flex flex-col gap-1">
                           <span className="text-sm font-bold text-slate-500">{cert.year}</span>
                           <span className="text-xs font-bold uppercase tracking-wider text-violet-400">{cert.type}</span>
@@ -197,7 +180,7 @@ const Awards = () => {
                     )}
                   </div>
                 </GlassCard>
-              </motion.div>
+              </RevealOnScroll>
             ))}
           </div>
         </div>
@@ -207,3 +190,4 @@ const Awards = () => {
 };
 
 export default Awards;
+

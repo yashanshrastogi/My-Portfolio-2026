@@ -80,23 +80,17 @@ const Footer = () => {
                 <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.5)]" />
                 Available for New Roles
               </div>
-              <p className="text-slate-400 text-base font-medium">
-                Based in <span className="text-white font-bold underline decoration-violet-500/30 underline-offset-4">{personalInfo.location}</span>
-              </p>
             </div>
           </div>
         </div>
 
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-slate-500 text-sm font-bold">
-            © {currentYear} Yashansh Rastogi. Refined for Excellence.
+            © {currentYear} Yashansh Rastogi
           </p>
-          <div className="flex flex-col md:flex-row items-center gap-3 text-slate-500 text-sm text-center md:text-right">
-            <span className="text-violet-400 font-bold italic tracking-wide">{personalInfo.passionateLine}</span>
-            <div className="flex items-center gap-2 font-medium">
-              <Heart className="w-4 h-4 text-pink-500 fill-pink-500" />
-              <span>using React & Modern CSS</span>
-            </div>
+          <div className="flex items-center gap-2 text-slate-500 text-sm font-medium">
+            <Heart className="w-4 h-4 text-pink-500 fill-pink-500" />
+            <span>using React & Modern CSS</span>
           </div>
         </div>
       </div>

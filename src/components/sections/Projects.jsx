@@ -5,11 +5,11 @@ import { projects } from '../../data/portfolioData';
 
 const Projects = () => {
   return (
-    <section id="projects" className="relative py-20 md:py-32">
+    <section id="projects" className="relative py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle 
           title="Featured Projects" 
-          subtitle="A collection of my work spanning AI/ML, web development, and cloud applications"
+          subtitle="3 projects. Real stacks. One is live right now."
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -27,7 +27,7 @@ const Projects = () => {
           className="text-center mt-12"
         >
           <a
-            href="https://github.com/lets-code404"
+            href="https://github.com/yashanshrastogi"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 

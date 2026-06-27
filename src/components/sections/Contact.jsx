@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Github, Linkedin, ExternalLink, Copy, CheckCircle } from 'lucide-react';
+import { Mail, Github, Linkedin, ExternalLink, Copy, CheckCircle } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
 import GlassCard from '../ui/GlassCard';
 import { personalInfo } from '../../data/portfolioData';
@@ -34,13 +34,6 @@ const Contact = () => {
       value: personalInfo.email,
       href: `https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email}`,
       color: 'from-violet-500 to-purple-500'
-    },
-    {
-      icon: MapPin,
-      label: 'Location',
-      value: personalInfo.location,
-      href: '#',
-      color: 'from-fuchsia-500 to-pink-500'
     }
   ];
 
@@ -48,7 +41,7 @@ const Contact = () => {
     {
       icon: Github,
       label: 'GitHub',
-      value: '@lets-code404',
+      value: '@yashanshrastogi',
       href: personalInfo.social.github,
       color: 'from-slate-600 to-slate-500'
     },
@@ -83,11 +76,11 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="relative py-20 md:py-32">
+    <section id="contact" className="relative py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle 
           title="Get In Touch" 
-          subtitle="Let's connect and discuss opportunities, projects, or just have a chat about technology"
+          subtitle="I reply within 24–48 hours. No fluff, just code talk."
         />
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -179,7 +172,7 @@ const Contact = () => {
                 </h3>
                 
                 <p className="text-lg text-slate-400 leading-relaxed max-w-sm mx-auto font-medium">
-                  I'm currently open for new opportunities. I respond exclusively via email and will get back to you within <span className="text-white font-bold underline decoration-violet-500/50">24 to 48 hours</span>.
+                  I'm currently open for new opportunities. I respond exclusively via email and will get back to you within <span className="text-white font-bold underline decoration-violet-500/50">24–48 hours</span>.
                 </p>
 
                 <div className="pt-10 flex flex-col items-center justify-center gap-4 w-full max-w-sm mx-auto">

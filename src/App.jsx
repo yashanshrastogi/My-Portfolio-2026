@@ -1,4 +1,5 @@
 import { lazy, Suspense } from 'react';
+import { MotionConfig } from 'framer-motion';
 import FloatingNav from './components/ui/FloatingNav';
 import Hero from './components/sections/Hero';
 import { useTheme } from './context/ThemeContext';
@@ -22,25 +23,27 @@ function App() {
   const { isDark } = useTheme();
 
   return (
-    <div 
-      className="min-h-screen transition-colors duration-300"
-      style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}
-    >
-      <FloatingNav />
-      <main>
-        <Hero />
-        <Suspense fallback={<SectionFallback />}>
-          <About />
-          <Skills />
-          <Projects />
-          <Experience />
-          <Education />
-          <Awards />
-          <Contact />
-          <Footer />
-        </Suspense>
-      </main>
-    </div>
+    <MotionConfig reducedMotion="user">
+      <div 
+        className="min-h-screen transition-colors duration-300"
+        style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}
+      >
+        <FloatingNav />
+        <main>
+          <Hero />
+          <Suspense fallback={<SectionFallback />}>
+            <About />
+            <Skills />
+            <Projects />
+            <Experience />
+            <Education />
+            <Awards />
+            <Contact />
+            <Footer />
+          </Suspense>
+        </main>
+      </div>
+    </MotionConfig>
   );
 }
 
