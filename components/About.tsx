@@ -23,7 +23,7 @@ export default function About() {
             About Me
           </motion.p>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 leading-snug">
-            Software Engineer building things that actually work.
+            Driven by curiosity and a love for building software.
           </h2>
         </motion.div>
 
@@ -39,22 +39,19 @@ export default function About() {
             <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-indigo-50/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10 space-y-5 text-base text-slate-600 leading-relaxed">
               <p>
-                I&apos;m Yashansh Rastogi, a B.Tech Computer Science &amp; IT
-                student at KCC Institute of Technology &amp; Management — building
-                scalable, production-ready software that solves real problems.
+                I&apos;m Yashansh, a Computer Science student at KCC Institute
+                of Technology &amp; Management. I spend most of my time coding,
+                learning new technologies, and figuring out how to build better applications.
               </p>
               <p>
-                My journey started with competitive programming in C++, giving
-                me a strong foundation in Data Structures &amp; Algorithms.
-                Today I build full-stack applications and AI-powered systems —
-                from geolocation-based offer platforms to offline voice
-                interfaces.
+                My programming journey started with C++ and competitive programming,
+                which gave me a solid grasp of data structures and algorithms. Since
+                then, I&apos;ve expanded into full-stack web development and machine learning.
               </p>
               <p>
-                I turn complex ideas into working software — shipping production
-                apps on Vercel and GCP, integrating local LLMs for
-                privacy-first automation, and building systems that handle
-                real-world load.
+                Recently, I&apos;ve been working on projects ranging from a geolocation-based
+                offer platform to an offline voice-controlled interface. I enjoy tinkering with
+                local LLMs, optimizing backend logic, and creating clean, interactive user interfaces.
               </p>
             </div>
           </motion.div>
